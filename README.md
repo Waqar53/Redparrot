@@ -26,7 +26,7 @@
 
 ###  **Live Web App**: [https://redparrot-seven.vercel.app](https://redparrot-seven.vercel.app)
 
-> Works instantly in your browser! Add your Groq API key in Settings and start practicing.
+> Works instantly in your browser! Add your CLAUDE/GROQ/OPENAI MADE FREE WITH GROK API key in Settings and start practicing.
 
 ---
 
