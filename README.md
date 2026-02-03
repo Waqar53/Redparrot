@@ -1,4 +1,4 @@
-# 🦜 RedParrot - AI Interview Copilot
+#  RedParrot - AI Interview Copilot
 
 <div align="center">
 
@@ -22,9 +22,9 @@
 
 ---
 
-## 🚀 Try It Now!
+##  Try It Now!
 
-### 🌐 **Live Web App**: [https://redparrot-seven.vercel.app](https://redparrot-seven.vercel.app)
+###  **Live Web App**: [https://redparrot-seven.vercel.app](https://redparrot-seven.vercel.app)
 
 > Works instantly in your browser! Add your Groq API key in Settings and start practicing.
 
@@ -44,7 +44,7 @@ RedParrot is a **free, open-source AI interview copilot** that helps you ace tec
 
 ---
 
-## ✨ Features
+##  Features
 
 ### 🎤 Real-time Speech Recognition
 - **Groq Whisper API** - Ultra-fast cloud transcription (<1 second latency)
@@ -109,7 +109,7 @@ RedParrot is a **free, open-source AI interview copilot** that helps you ace tec
 
 ---
 
-## 🔥 Quick Start
+##  Quick Start
 
 ### Web Version (Instant)
 Just visit: **[https://redparrot-seven.vercel.app](https://redparrot-seven.vercel.app)**
@@ -269,7 +269,7 @@ MIT License - see [LICENSE](LICENSE) for details.
 
 ### 🦜 **[Try RedParrot Now →](https://redparrot-seven.vercel.app)**
 
-**Made with ❤️ for interview success**
+**Made with ❤️ use at your risk**
 
 ⭐ Star this repo if it helped you!
 
