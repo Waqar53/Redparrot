@@ -1,0 +1,17 @@
+# Ignore node_modules - Vercel will install dependencies
+node_modules
+
+# Ignore Electron and desktop build files
+electron
+dist/mac*
+dist/*.dmg
+dist/*.zip
+*.dmg
+*.app
+
+# Others
+.git
+.DS_Store
+backend
+docker
+.env

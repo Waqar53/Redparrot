@@ -2,126 +2,179 @@
 
 <div align="center">
 
-![RedParrot Logo](./assets/logo.png)
+<img src="./public/logo.jpg" alt="RedParrot Logo" width="150" style="border-radius: 20px;">
 
-**The Ultimate Free, Stealth AI Interview Assistant**
+### **Ace Any Interview with AI-Powered Real-Time Assistance**
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Electron](https://img.shields.io/badge/Electron-26+-47848F?logo=electron)](https://electronjs.org/)
+[![Live Demo](https://img.shields.io/badge/🚀_Live_Demo-redparrot--seven.vercel.app-red?style=for-the-badge)](https://redparrot-seven.vercel.app)
+[![GitHub](https://img.shields.io/badge/GitHub-Waqar53/Redparrot-black?style=for-the-badge&logo=github)](https://github.com/Waqar53/Redparrot)
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
+[![Electron](https://img.shields.io/badge/Electron-28+-47848F?logo=electron)](https://electronjs.org/)
 [![React](https://img.shields.io/badge/React-18+-61DAFB?logo=react)](https://reactjs.org/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5+-3178C6?logo=typescript)](https://typescriptlang.org/)
-[![Groq](https://img.shields.io/badge/Groq-Free%20API-FF6B35)](https://groq.com/)
 
-[Features](#-features) • [Quick Start](#-quick-start) • [Free API Setup](#-free-api-setup) • [Documentation](#-documentation)
+**🎯 Real-time Question Detection • 🤖 AI-Powered Answers • 🕵️ Stealth Mode • 📄 Resume Intelligence**
+
+[Try Live Demo](https://redparrot-seven.vercel.app) • [Features](#-features) • [How to Use](#-how-to-use) • [Installation](#-installation) • [API Setup](#-free-api-setup)
 
 </div>
 
 ---
 
+## 🚀 Try It Now!
+
+### 🌐 **Live Web App**: [https://redparrot-seven.vercel.app](https://redparrot-seven.vercel.app)
+
+> Works instantly in your browser! Add your Groq API key in Settings and start practicing.
+
+---
+
 ## 🎯 What is RedParrot?
 
-RedParrot is a **100% free, open-source** AI-powered interview copilot that helps you ace any interview. It features:
+RedParrot is a **free, open-source AI interview copilot** that helps you ace technical and behavioral interviews:
 
-- **Real-time transcription** of interview questions
-- **Instant AI-powered answers** tailored to your resume
-- **Undetectable stealth overlay** invisible to screen sharing
-- **Zero cost** - uses free Groq API (750K tokens/day)
-
-> ⚠️ **Disclaimer**: This tool is intended for interview practice and accessibility. Using it deceptively may violate company policies.
+| Feature | Description |
+|---------|-------------|
+| 🎤 **Real-time Transcription** | Instantly transcribes interview questions as they're asked |
+| 🤖 **AI-Powered Answers** | Generates professional FAANG-level responses in real-time |
+| 📄 **Resume Integration** | Tailors answers based on YOUR experience and skills |
+| 🕵️ **Stealth Mode** | Desktop app is invisible to screen sharing (proctored interviews) |
+| 💰 **100% Free** | Uses Groq's free API (750K tokens/day = ~50 interviews) |
 
 ---
 
 ## ✨ Features
 
 ### 🎤 Real-time Speech Recognition
-- **Groq Whisper API** - Free, fast cloud transcription (<1s latency)
-- **Whisper.cpp** - Optional local processing for privacy
-- Support for **50+ languages** including auto-detection
+- **Groq Whisper API** - Ultra-fast cloud transcription (<1 second latency)
+- **English-optimized** - Accurate technical terminology recognition
+- **Continuous listening** - Automatically detects new questions
 
 ### 🤖 AI Answer Generation
-- **Groq Llama 3.3 70B** - Free, state-of-the-art LLM
-- **STAR method** formatting for behavioral questions
-- Three answer lengths: Short (30s), Medium (60s), Long (90s)
-- Context-aware answers using your resume
+- **Groq Llama 3.3 70B** - Free, state-of-the-art responses
+- **STAR Method** - Structured behavioral answers (Situation, Task, Action, Result)
+- **Code Examples** - Technical questions include syntax-highlighted code
+- **Three Lengths** - Short (30s), Medium (60s), Long (90s) speaking time
+- **Resume-aware** - Weaves in YOUR projects, skills, and metrics
 
-### 🕵️ Stealth Mode (Undetectable Overlay)
-- **Transparent overlay** excluded from screen capture
-- **Auto-hide** when screen sharing is detected
-- **Process obfuscation** - appears as "System Helper"
-- **No dock/taskbar icon** - completely hidden
-- **Click-through regions** for seamless interaction
+### 🕵️ Stealth Mode (Desktop App)
+```
+✅ Invisible to Zoom screen share
+✅ Invisible to Google Meet
+✅ Invisible to Microsoft Teams
+✅ Invisible to proctoring software (ProctorU, Examity, etc.)
+✅ Hidden from Alt+Tab / Cmd+Tab
+✅ Process disguised as "System Helper"
+```
 
 ### 📄 Resume Intelligence
-- Parse **PDF, DOCX, TXT** resumes
-- Extract skills, experience, education automatically
-- Personalized answers based on your background
-
-### 🔌 100% Free APIs
-| Service | API | Free Tier |
-|---------|-----|-----------|
-| Speech-to-Text | Groq Whisper | Unlimited |
-| AI Answers | Groq Llama 3.3 70B | 750K tokens/day (~50 interviews) |
-| Local Fallback | Ollama | Free (runs locally) |
+- Parse **PDF, DOCX, TXT** formats
+- Auto-extract skills, experience, education
+- AI incorporates YOUR specific achievements
 
 ---
 
-## 🚀 Quick Start
+## 📖 How to Use
 
-### Prerequisites
-- **Node.js 18+** and **npm**
-- **macOS 11+** or **Windows 10+**
-- **Groq API Key** (free at [console.groq.com](https://console.groq.com))
+### Step 1: Open RedParrot
+**Web**: Visit [redparrot-seven.vercel.app](https://redparrot-seven.vercel.app)  
+**Desktop**: Clone repo and run `npm start`
 
-### Installation
+### Step 2: Add Your API Key
+1. Go to **Settings** tab
+2. Expand **API Keys** section
+3. Paste your free Groq API key
+4. Click **Save**
+
+> 🔑 Get free key at [console.groq.com](https://console.groq.com) (no credit card!)
+
+### Step 3: Upload Your Resume (Optional)
+1. Go to **Resume** tab
+2. Drag & drop your resume (PDF, DOCX, TXT)
+3. AI will use your experience for personalized answers
+
+### Step 4: Start Interview
+1. Click **Start Interview** button
+2. Allow microphone access when prompted
+3. Ask or play interview questions
+4. Watch as answers appear in real-time!
+
+### Step 5: Use Keyboard Shortcuts
+| Shortcut | Action |
+|----------|--------|
+| `⌘⇧O` | Toggle overlay visibility |
+| `⌘⇧H` | **Hide all windows** (panic button!) |
+| `⌘⇧C` | Toggle click-through mode |
+
+---
+
+## 🔥 Quick Start
+
+### Web Version (Instant)
+Just visit: **[https://redparrot-seven.vercel.app](https://redparrot-seven.vercel.app)**
+
+### Desktop Version (Full Stealth)
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/redparrot.git
-cd redparrot
+git clone https://github.com/Waqar53/Redparrot.git
+cd Redparrot
 
 # Install dependencies
 npm install
 
-# Start development
-npm run dev
+# Start the app
+npm start
 ```
-
-### Get Your Free API Key
-
-1. Go to [console.groq.com](https://console.groq.com)
-2. Sign up for free (no credit card required)
-3. Create an API key
-4. Add it in RedParrot Settings
 
 ---
 
 ## 🔑 Free API Setup
 
-### Groq API (Recommended)
-Groq provides incredibly fast inference with a generous free tier:
+### Groq API (Recommended - FREE!)
 
-```
-Daily Limit: 750,000 tokens (enough for ~50 interviews)
-Models: Whisper Large V3, Llama 3.3 70B Versatile
-Latency: ~200ms average
-```
+Groq provides incredibly fast, free AI:
 
-1. Create free account at [groq.com](https://console.groq.com)
-2. Generate API key
-3. Add to RedParrot Settings
+| Feature | Details |
+|---------|---------|
+| **Daily Limit** | 750,000 tokens (~50 interviews/day) |
+| **Speech Model** | Whisper Large V3 Turbo |
+| **AI Model** | Llama 3.3 70B Versatile |
+| **Latency** | ~200ms average |
+| **Cost** | **$0 forever** |
+
+**Get your key:**
+1. Go to [console.groq.com](https://console.groq.com)
+2. Sign up (no credit card required!)
+3. Click "Create API Key"
+4. Copy and paste into RedParrot Settings
 
 ### Ollama (Local Fallback)
-For offline use or unlimited usage:
 
+For offline/unlimited use:
 ```bash
 # Install Ollama
 curl -fsSL https://ollama.ai/install.sh | sh
 
-# Download Llama 3.2
+# Download model
 ollama pull llama3.2
 
-# RedParrot will auto-detect Ollama
+# RedParrot auto-detects Ollama at localhost:11434
 ```
+
+---
+
+## 🛠️ Tech Stack
+
+| Layer | Technology |
+|-------|------------|
+| **Frontend** | React 18, TypeScript, Tailwind CSS |
+| **Desktop** | Electron 28 |
+| **State** | Zustand |
+| **ASR** | Groq Whisper API |
+| **AI** | Groq Llama 3.3 70B |
+| **Animations** | Framer Motion |
 
 ---
 
@@ -129,129 +182,72 @@ ollama pull llama3.2
 
 ```
 redparrot/
-├── electron/                # Electron main process
-│   ├── main.js              # App entry, window management
-│   ├── preload.js           # Secure IPC bridge
-│   └── stealth/             # Stealth utilities
-│       ├── process-hide.js  # Process obfuscation
-│       ├── window-exclude.js# Screen capture exclusion
-│       └── screen-detect.js # Screen share detection
-├── src/                     # React frontend
-│   ├── App.tsx              # Main application
-│   ├── components/          # React components
-│   │   ├── Overlay/         # Stealth overlay window
-│   │   ├── Settings/        # Configuration panel
-│   │   └── ResumeUpload/    # Resume parser UI
-│   ├── services/            # Core services
-│   │   ├── audio-capture.ts # Microphone/system audio
-│   │   ├── asr-service.ts   # Speech recognition
-│   │   ├── question-detector.ts # Question classification
-│   │   ├── ai-service.ts    # Answer generation
-│   │   ├── resume-parser.ts # Resume extraction
-│   │   └── interview-pipeline.ts # Orchestrator
-│   └── stores/              # Zustand state management
-├── backend/                 # FastAPI backend (optional)
-│   ├── main.py              # API routes
-│   └── services/            # Python services
-├── docker-compose.yml       # Docker configuration
-└── package.json             # Project configuration
+├── electron/                 # Desktop app (Electron)
+│   ├── main.js               # Window management & stealth
+│   ├── preload.js            # Secure IPC bridge
+│   └── stealth/              # Invisibility features
+├── src/                      # React frontend
+│   ├── components/           # UI components
+│   ├── services/             # Core logic (ASR, AI, Pipeline)
+│   └── stores/               # Zustand state
+├── public/                   # Static assets
+└── package.json              # Dependencies
 ```
-
----
-
-## ⌨️ Keyboard Shortcuts
-
-| Shortcut | Action |
-|----------|--------|
-| `⌘⇧O` / `Ctrl+Shift+O` | Toggle overlay |
-| `⌘⇧R` / `Ctrl+Shift+R` | Toggle main window |
-| `⌘⇧H` / `Ctrl+Shift+H` | Hide all windows |
-| `⌘⇧C` / `Ctrl+Shift+C` | Toggle click-through mode |
-
----
-
-## 🛡️ Privacy & Security
-
-- **Local-first**: Audio processed locally by default
-- **No data storage**: Conversations aren't saved to cloud
-- **Encrypted settings**: API keys stored securely
-- **Open source**: Full transparency, audit the code
 
 ---
 
 ## 🔧 Development
 
-### Run in Development
 ```bash
-# Start Vite dev server + Electron
+# Development mode (hot reload)
 npm run dev
 
-# Start only frontend
-npm run dev:web
-
-# Start backend (optional)
-cd backend && pip install -r requirements.txt && uvicorn main:app --reload
-```
-
-### Build for Production
-```bash
-# Build and package
+# Build production
 npm run build
 
-# Package for distribution
-npm run package
-
-# Create installer
-npm run make
-```
-
-### Docker Deployment
-```bash
-# Start all services
-docker-compose up -d
-
-# View logs
-docker-compose logs -f backend
+# Package desktop app
+npm run package:mac    # macOS
+npm run package:win    # Windows
+npm run package:linux  # Linux
 ```
 
 ---
 
-## 🧪 Testing
+## 🛡️ Privacy & Security
 
-```bash
-# Run tests
-npm test
+- ✅ **Open Source** - Audit every line of code
+- ✅ **Local Processing Option** - Use Ollama for full privacy
+- ✅ **No Data Storage** - Nothing saved to external servers
+- ✅ **Encrypted Keys** - API keys stored securely locally
 
-# Run with coverage
-npm run test:coverage
-```
+---
+
+## ⚠️ Disclaimer
+
+> This tool is designed for **interview practice** and **accessibility purposes**. Using it deceptively in actual interviews may violate company policies. Use responsibly.
 
 ---
 
 ## 📋 Roadmap
 
-- [x] Real-time transcription (Groq Whisper)
-- [x] AI answer generation (Groq Llama)
+- [x] Real-time transcription
+- [x] AI answer generation
 - [x] Stealth overlay mode
 - [x] Resume parsing
 - [x] STAR method formatting
-- [ ] Coding interview support (screen OCR)
-- [ ] Interview analytics dashboard
-- [ ] Multi-language UI
+- [x] Code examples for technical questions
+- [ ] Screen OCR for coding interviews
+- [ ] Interview analytics
 - [ ] Voice output mode
-- [ ] Mobile companion app
 
 ---
 
 ## 🤝 Contributing
 
-Contributions are welcome! Please read our [Contributing Guide](CONTRIBUTING.md) first.
+Contributions welcome! See [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ```bash
-# Fork and clone
-git clone https://github.com/yourusername/redparrot.git
-
-# Create feature branch
+# Fork, clone, and create feature branch
 git checkout -b feature/amazing-feature
 
 # Make changes and commit
@@ -269,20 +265,12 @@ MIT License - see [LICENSE](LICENSE) for details.
 
 ---
 
-## 🙏 Acknowledgements
-
-- [Groq](https://groq.com) - Free, blazing-fast API
-- [Electron](https://electronjs.org) - Cross-platform desktop apps
-- [React](https://reactjs.org) - UI framework
-- [Tailwind CSS](https://tailwindcss.com) - Styling
-- [OpenAI Whisper](https://github.com/openai/whisper) - Speech recognition
-
----
-
 <div align="center">
 
-**Made with ❤️ for interview preparation**
+### 🦜 **[Try RedParrot Now →](https://redparrot-seven.vercel.app)**
 
-[⬆ Back to top](#-redparrot---ai-interview-copilot)
+**Made with ❤️ for interview success**
+
+⭐ Star this repo if it helped you!
 
 </div>
