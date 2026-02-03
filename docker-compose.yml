@@ -1,0 +1,78 @@
+# ============================================================================
+# RedParrot - Docker Compose Configuration
+# Orchestrates all services for development and production
+# ============================================================================
+
+version: '3.8'
+
+services:
+  # FastAPI Backend
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: redparrot-backend
+    ports:
+      - "8000:8000"
+    environment:
+      - SECRET_KEY=${SECRET_KEY:-redparrot-secret-key-change-in-production}
+      - GROQ_API_KEY=${GROQ_API_KEY}
+      - DATABASE_URL=${DATABASE_URL:-sqlite:///./data/redparrot.db}
+      - REDIS_URL=${REDIS_URL:-redis://redis:6379}
+    volumes:
+      - ./backend:/app
+      - backend-data:/app/data
+    depends_on:
+      - redis
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 10s
+
+  # Redis Cache
+  redis:
+    image: redis:7-alpine
+    container_name: redparrot-redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis-data:/data
+    command: redis-server --appendonly yes
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # PostgreSQL Database (Production)
+  # Uncomment for production deployment
+  # postgres:
+  #   image: postgres:15-alpine
+  #   container_name: redparrot-postgres
+  #   ports:
+  #     - "5432:5432"
+  #   environment:
+  #     - POSTGRES_USER=${POSTGRES_USER:-redparrot}
+  #     - POSTGRES_PASSWORD=${POSTGRES_PASSWORD:-redparrot-password}
+  #     - POSTGRES_DB=${POSTGRES_DB:-redparrot}
+  #   volumes:
+  #     - postgres-data:/var/lib/postgresql/data
+  #   restart: unless-stopped
+  #   healthcheck:
+  #     test: ["CMD-SHELL", "pg_isready -U redparrot"]
+  #     interval: 10s
+  #     timeout: 5s
+  #     retries: 5
+
+volumes:
+  backend-data:
+  redis-data:
+  # postgres-data:
+
+networks:
+  default:
+    name: redparrot-network

@@ -1,0 +1,102 @@
+{
+  "name": "redparrot",
+  "version": "1.0.0",
+  "description": "AI-Powered Interview Copilot - Stealth & Undetectable",
+  "main": "electron/main.js",
+  "scripts": {
+    "start": "concurrently \"npm run dev\" \"wait-on http://localhost:5173 && electron .\"",
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "electron": "electron .",
+    "package": "electron-builder",
+    "package:mac": "electron-builder --mac",
+    "package:win": "electron-builder --win",
+    "package:linux": "electron-builder --linux",
+    "test": "vitest",
+    "lint": "eslint src --ext ts,tsx"
+  },
+  "build": {
+    "appId": "com.system.helper",
+    "productName": "System Helper",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "electron/**/*",
+      "dist/**/*",
+      "package.json"
+    ],
+    "mac": {
+      "category": "public.app-category.utilities",
+      "target": ["dmg", "zip"],
+      "icon": "assets/icon.icns",
+      "hardenedRuntime": true,
+      "gatekeeperAssess": false,
+      "entitlements": "build/entitlements.mac.plist",
+      "entitlementsInherit": "build/entitlements.mac.plist",
+      "extendInfo": {
+        "LSUIElement": true,
+        "NSMicrophoneUsageDescription": "Required for audio processing",
+        "NSAppleEventsUsageDescription": "Required for system integration"
+      }
+    },
+    "win": {
+      "target": ["nsis"],
+      "icon": "assets/icon.ico"
+    },
+    "linux": {
+      "target": ["AppImage", "deb"],
+      "icon": "assets/icon.png"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true
+    }
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.25.0",
+    "axios": "^1.6.7",
+    "electron-store": "^8.1.0",
+    "framer-motion": "^11.0.0",
+    "groq-sdk": "^0.3.0",
+    "mammoth": "^1.6.0",
+    "node-record-lpcm16": "^1.0.1",
+    "openai": "^4.28.0",
+    "pdf-parse": "^1.1.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-dropzone": "^14.2.3",
+    "react-hot-toast": "^2.4.1",
+    "react-icons": "^5.0.1",
+    "tesseract.js": "^5.0.4",
+    "uuid": "^9.0.1",
+    "wav": "^1.0.2",
+    "whisper-node": "^1.1.1",
+    "zustand": "^4.5.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.0",
+    "@types/react": "^18.2.43",
+    "@types/react-dom": "^18.2.17",
+    "@types/uuid": "^9.0.7",
+    "@typescript-eslint/eslint-plugin": "^6.14.0",
+    "@typescript-eslint/parser": "^6.14.0",
+    "@vitejs/plugin-react": "^4.2.1",
+    "autoprefixer": "^10.4.16",
+    "concurrently": "^8.2.2",
+    "electron": "^28.2.0",
+    "electron-builder": "^24.9.1",
+    "eslint": "^8.56.0",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-refresh": "^0.4.5",
+    "postcss": "^8.4.32",
+    "tailwindcss": "^3.4.0",
+    "typescript": "^5.3.3",
+    "vite": "^5.0.10",
+    "vitest": "^1.2.0",
+    "wait-on": "^7.2.0"
+  },
+  "keywords": ["interview", "ai", "assistant", "copilot"],
+  "author": "RedParrot",
+  "license": "MIT"
+}

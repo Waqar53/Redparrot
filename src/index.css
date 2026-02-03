@@ -1,0 +1,298 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ============================================================================
+   RedParrot - Global Styles
+   ============================================================================ */
+
+:root {
+  --primary: #22c55e;
+  --primary-dark: #16a34a;
+  --bg-dark: #0f172a;
+  --bg-darker: #020617;
+  --text-primary: #f8fafc;
+  --text-secondary: #94a3b8;
+  --border-color: #334155;
+  --glass-bg: rgba(15, 23, 42, 0.85);
+  --glass-border: rgba(255, 255, 255, 0.1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+  background: var(--bg-darker);
+  color: var(--text-primary);
+  overflow: hidden;
+  height: 100%;
+}
+
+#root {
+  height: 100%;
+}
+
+/* ============================================================================
+   Scrollbar Styles
+   ============================================================================ */
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-color);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-secondary);
+}
+
+/* ============================================================================
+   Glass Morphism Utilities
+   ============================================================================ */
+
+.glass {
+  background: var(--glass-bg);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--glass-border);
+}
+
+.glass-light {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* ============================================================================
+   Gradient Utilities
+   ============================================================================ */
+
+.gradient-primary {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, #22c55e 0%, #4ade80 50%, #86efac 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.gradient-border {
+  position: relative;
+}
+
+.gradient-border::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  padding: 1px;
+  border-radius: inherit;
+  background: linear-gradient(135deg, var(--primary), transparent);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+}
+
+/* ============================================================================
+   Animation Utilities
+   ============================================================================ */
+
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(34, 197, 94, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(34, 197, 94, 0.5);
+  }
+}
+
+.pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.shimmer {
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.1) 50%,
+    transparent 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 2s infinite;
+}
+
+/* ============================================================================
+   Drag Handle for Overlay
+   ============================================================================ */
+
+.drag-handle {
+  -webkit-app-region: drag;
+  cursor: move;
+}
+
+.no-drag {
+  -webkit-app-region: no-drag;
+}
+
+/* ============================================================================
+   Overlay Window Styles
+   ============================================================================ */
+
+.overlay-container {
+  background: transparent;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.overlay-content {
+  background: rgba(15, 23, 42, 0.92);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(34, 197, 94, 0.2);
+  border-radius: 12px;
+  box-shadow: 
+    0 25px 50px -12px rgba(0, 0, 0, 0.5),
+    0 0 0 1px rgba(255, 255, 255, 0.05) inset;
+}
+
+/* ============================================================================
+   Answer Card Styles
+   ============================================================================ */
+
+.answer-card {
+  transition: all 0.3s ease;
+}
+
+.answer-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px -10px rgba(34, 197, 94, 0.3);
+}
+
+/* ============================================================================
+   Button Styles
+   ============================================================================ */
+
+.btn-primary {
+  @apply px-4 py-2 bg-primary-500 hover:bg-primary-600 text-white font-medium rounded-lg 
+         transition-all duration-200 ease-out hover:shadow-lg hover:shadow-primary-500/25;
+}
+
+.btn-secondary {
+  @apply px-4 py-2 bg-dark-700 hover:bg-dark-600 text-white font-medium rounded-lg 
+         border border-dark-600 transition-all duration-200 ease-out;
+}
+
+.btn-ghost {
+  @apply px-4 py-2 bg-transparent hover:bg-dark-800 text-dark-300 hover:text-white 
+         font-medium rounded-lg transition-all duration-200 ease-out;
+}
+
+/* ============================================================================
+   Input Styles
+   ============================================================================ */
+
+.input-field {
+  @apply w-full px-4 py-3 bg-dark-800 border border-dark-600 rounded-lg 
+         text-white placeholder-dark-400 focus:outline-none focus:border-primary-500 
+         focus:ring-2 focus:ring-primary-500/20 transition-all duration-200;
+}
+
+/* ============================================================================
+   Typing Indicator
+   ============================================================================ */
+
+.typing-indicator {
+  display: flex;
+  gap: 4px;
+  padding: 8px;
+}
+
+.typing-indicator span {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--primary);
+  animation: typing 1.4s infinite ease-in-out;
+}
+
+.typing-indicator span:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.typing-indicator span:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.typing-indicator span:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes typing {
+  0%, 60%, 100% {
+    transform: translateY(0);
+    opacity: 0.4;
+  }
+  30% {
+    transform: translateY(-10px);
+    opacity: 1;
+  }
+}
+
+/* ============================================================================
+   Status Indicator
+   ============================================================================ */
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.status-dot.active {
+  background: var(--primary);
+  box-shadow: 0 0 10px var(--primary);
+}
+
+.status-dot.inactive {
+  background: var(--border-color);
+}
+
+.status-dot.processing {
+  background: #f59e0b;
+  animation: pulse 1s infinite;
+}
+
+/* ============================================================================
+   Responsive Adjustments
+   ============================================================================ */
+
+@media (max-width: 640px) {
+  .overlay-content {
+    padding: 12px;
+    font-size: 14px;
+  }
+}
